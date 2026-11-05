@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHouse.ru - Каталог проектов</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <header></header>
+        
+        <div class="layout">
+           
+            <aside class="sidebar">
+               
+                <div class="logo">
+                  <img src="logo_myhouse.gif" alt="Logo">
+                
+                </div>
+
+                <p><a href="#" class="order-link">Заказать проект</a></p><br>
+
+                <ul id="menu_slide">
+                  <li><b><a href="javascript:void(0);">Меню 01</a></b></li>
+                  <li><b><a href="javascript:void(0);">Меню 02 -></a></b>
+                    <ul class="menu_slide">
+                      <li><a href="#">Стоимость</a></li>
+                      <li><a href="login.php">Вход</a></li>
+                      <li><a href="estate.php">Заявка на дом</a></li>
+                      <li><a href="sales.php">Архив сделок</a></li>
+                    </ul>
+                  </li>
+                  <li><b><a href="javascript:void(0);">Меню 03 -></a></b>
+                    <ul class="menu_slide">
+                      <li><a href="#">Ссылка 04</a></li>
+                      <li><a href="#">Ссылка 05</a></li>
+                      <li><a href="#">Ссылка 06</a></li>
+                      <li><a href="#">Ссылка 07</a></li>
+                    </ul>
+                  </li>
+                <li><b><a href="javascript:void(0);">Меню 04</a></b></li>
+                </ul>
+
+                <h3>Категории проектов</h3>
+                <ol>
+                   
+                    <li><a href="townhouses.html" class="townhouse-link">Проекты таунхаусов и блокированных домов</a></li>
+                    <li><a href="2family.html">Проекты домов на две семьи</a></li>
+                    <li><a href="#">Проекты узких домов</a></li>
+                    <li><a href="#">Проекты бань</a></li>
+                </ol>
+
+                <h3>Каталог архитектурных проектов</h3>
+                <ul>
+                    <li><a href="#">Проекты кирпичных домов</a></li>
+                    <li><a href="#">Проекты домов из газобетона и пенобетона</a></li>
+                    <li><a href="#">Проекты домов из бруса и бревна</a></li>
+                    <li><a href="#">Проекты каркасных домов</a></li>
+                </ul>
+
+                <h3>Площади домов</h3>
+                <ul>
+                    <li><a href="#">до 150 м²</a></li>
+                    <li><a href="#">от 150 до 250 м²</a></li>
+                    <li><a href="#">от 250 до 400 м²</a></li>
+                    <li><a href="#">от 400 м²</a></li>
+                </ul>
+
+                <p><a href="#">Садовые участки</a></p>
+
+            </aside>
+
+            <main class="main-content">
+                <h1>Каталог архитектурных проектов</h1>
+                <h2>ПРОЕКТЫ ДЛЯ ВАШЕГО БУДУЩЕГО ДОМА</h2>
+                
+                <p>Каталог готовых архитектурных проектов коттеджей MyHouse.ru явился результатом многолетней работы лучших российских специалистов в области архитектуры и строительства. Это своего рода «Собрание сочинений» от современной загородной архитектуры, в котором каждый может найти что-то свое. Почти все проекты домов уникальны и лишь небольшое число коттеджей проектировались, как типовые; в широком же смысле слова, проекты коттеджей из каталога нельзя называть типовыми, поскольку разрабатывались они в порядке индивидуального проектирования непосредственно под нужды будущих владельцев загородных домов. Более 95% проектов реализовано в строительстве. Большая часть проектов реализована неоднократно, как в Московской области, так и по всей территории Российской Федерации, в странах ближнего зарубежья.</p>
+
+                <div class="gallery">
+                    <img src="house1.jpg" alt="Проект дома 1" class="pos-1">
+                    <img src="house2.jpg" alt="Проект дома 2" class="pos-2">
+                    <img src="house3.jpg" alt="Проект дома 3" class="pos-3">
+                    <img src="house4.jpg" alt="Проект дома 4" class="pos-4">
+                    <img src="house5.jpg" alt="Проект дома 5" class="pos-5">
+                    <img src="house6.jpg" alt="Проект дома 6" class="pos-6">
+                </div>
+            </main>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#menu_slide li').click(function (event) {
+                event.stopPropagation();
+
+                var submenu = $(this).children('ul');
+
+                if (submenu.length > 0) {
+                    submenu.slideToggle(500);
+                }
+            });
+
+            $(document).click(function () {
+                $('#menu_slide ul').slideUp(500);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
