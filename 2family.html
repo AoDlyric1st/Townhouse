@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHouse.ru - Проекты домов на 2 семьи</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+
+    <div class="container">
+        <header></header>
+        
+        <div class="layout">
+            <aside class="sidebar">
+                <div class="logo">
+                    <a href="index.html"><img src="logo_myhouse.gif" alt="Logo"></a>
+                </div>
+
+                <p><a href="#" class="order-link">Заказать проект</a></p><br>
+
+            
+
+                <ul id="menu_slide">
+                  <li><b><a href="javascript:void(0);">Меню 01</a></b></li>
+                  <li><b><a href="javascript:void(0);">Меню 02 -></a></b>
+                    <ul class="menu_slide">
+    <li><a href="#">Ссылка 01</a></li>
+    <li><a href="login.php">Вход / Регистрация</a></li>
+    <li><a href="estate.php">Заявка на дом</a></li>
+</ul>
+                  </li>
+                  <li><b><a href="javascript:void(0);">Меню 03 -></a></b>
+                    <ul class="menu_slide">
+                      <li><a href="admin_login.php">Вход сотруднику</a></li>
+                      <li><a href="#">Ссылка 05</a></li>
+                      <li><a href="#">Ссылка 06</a></li>
+                      <li><a href="#">Ссылка 07</a></li>
+                    </ul>
+                  </li>
+                <li><b><a href="javascript:void(0);">Меню 04</a></b></li>
+                </ul>
+
+                <h3>Категории проектов</h3>
+                <ol>
+                    <li><a href="townhouses.html" class="townhouse-link">Проекты таунхаусов и блокированных домов</a></li>
+                    <li><a href="2family.html" class="townhouse-link">Проекты домов на две семьи</a></li>
+                    <li><a href="#">Проекты узких домов</a></li>
+                    <li><a href="#">Проекты бань</a></li>
+                </ol>
+
+                <h3>Каталог архитектурных проектов</h3>
+                <ul>
+                    <li><a href="#">Проекты кирпичных домов</a></li>
+                    <li><a href="#">Проекты домов из газобетона и пенобетона</a></li>
+                    <li><a href="#">Проекты домов из бруса и бревна</a></li>
+                    <li><a href="#">Проекты каркасных домов</a></li>
+                </ul>
+
+                <h3>Площади домов</h3>
+                <ul>
+                    <li><a href="#">до 150 м²</a></li>
+                    <li><a href="#">от 150 до 250 м²</a></li>
+                    <li><a href="#">от 250 до 400 м²</a></li>
+                    <li><a href="#">от 400 м²</a></li>
+                </ul>
+
+                <p><a href="#">Садовые участки</a></p>
+            </aside>
+
+            
+            <main class="main-content townhouses-bg">
+                <h1>Проекты домов на две семьи</h1>
+                
+                <p>В данном разделе каталога проекты домов на две семьи. Вы можете подобрать желаемое количество этажей и окон.</p>
+
+                
+                <form action="#" method="get" class="project-form">
+                    <h2>Подбор проекта</h2>
+
+                    <label for="floors">Количество этажей:</label>
+                    <select name="floors" id="floors">
+                        <option value="1">1 этаж</option>
+                        <option value="2" selected>2 этажа</option>
+                        <option value="3">3 этажа</option>
+                    </select><br>
+
+                    <label for="windows">Количество окон:</label>
+                    <select name="windows" id="windows">
+                        <option value="1-5">1-5 окон</option>
+                        <option value="6-10" selected>6-10 окон</option>
+                        <option value="11-15">11-15 окон</option>
+                        <option value="16+">16+ окон</option>
+                    </select>
+
+                    <br><br>
+
+                    <div class="cards-row">
+                        <div class="card-option">
+                            <h3>Тип крыши:</h3>
+        <label><input type="radio" name="stat" value="shifer" checked>Шифер</label>
+        <label><input type="radio" name="stat" value="cherepiza" checked>Черепица</label>
+        <label><input type="radio" name="stat" value="oc.list" checked>Оцинков. лист</label>
+    </div>
+
+
+                <div class="card-option">
+                    <h3>Тип стен:</h3>
+        <label><input type="radio" name="status" value="kirp" checked>Кирпичные</label>
+        <label><input type="radio" name="status" value="kamen" checked>Каменные (из блоков)</label>
+        <label><input type="radio" name="status" value="brevno" checked>Деревянные из брёвен</label>
+        </div>
+        </div>
+        
+        <br>
+
+        <div class="checkboxes-row">
+        <label><input type="checkbox" id="attic" name="attic">Мансарда</label>
+        <label><input type="checkbox" id="finish" name="finish">Чистовая отделка</label>
+        </div>
+
+        <br>
+
+        <div class="calc-row">
+            <button type="button" id="calc-btn">Расчёт</button>
+        <span id="total-cost"></span>
+        </div>
+
+    </form>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#menu_slide li').click(function (event) {
+                event.stopPropagation();
+
+                var submenu = $(this).children('ul');
+
+                if (submenu.length > 0) {
+                    submenu.slideToggle(500);
+                }
+            });
+
+            $(document).click(function () {
+                $('#menu_slide ul').slideUp(500);
+            });
+
+        });
+    </script>
+
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $('#calc-btn').click(function () {
+                
+                var floors = $('#floors').val();
+                var windows = $('#windows').val();
+                var roof = $('input[name="stat"]:checked').val();
+                var walls = $('input[name="status"]:checked').val();
+                var hasAttic = $('#attic').is(':checked');
+                var hasFinish = $('#finish').is(':checked');
+
+                
+                var total = 0;
+
+                
+                if (floors == '1') total += 1000000;
+                else if (floors == '2') total += 1800000;
+                else if (floors == '3') total += 2500000;
+
+                
+                if (windows == '1-5') total += 100000;
+                else if (windows == '6-10') total += 180000;
+                else if (windows == '11-15') total += 250000;
+                else if (windows == '16+') total += 350000;
+
+                
+                if (roof == 'shifer') total += 200000;
+                else if (roof == 'cherepiza') total += 350000;
+                else if (roof == 'oc.list') total += 250000;
+
+            
+                if (walls == 'kirp') total += 800000;
+                else if (walls == 'kamen') total += 700000;
+                else if (walls == 'brevno') total += 600000;
+
+                
+                if (hasAttic) total += 300000;
+                if (hasFinish) total += 500000;
+
+            
+                var formattedTotal = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                
+                $('#total-cost').text('Стоимость: ' + formattedTotal + ' руб.');
+            });
+        });
+    </script>
+
+</body>
+</html>
